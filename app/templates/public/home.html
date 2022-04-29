@@ -1,17 +1,16 @@
 {%extends "public/publicTemplate/basePublicTemplate.html"%}
-{% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/navStyle.css') }}">
-{% endblock head %}
+
 <title>{%block title%} This is Home.{%endblock%}</title>
 
 
 {%block main%}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/navStyle.css') }}">
 <nav class="navbar">
   <div class="fluid">
     <div class="nav">
-      <a class="nav-link active" aria-current="page" href="/">Home</a>
-      <a class="nav-link" href="/signUp">Sign-Up</a>
-      <a class="nav-link" href="/test">test</a>
+      <a class="link-home" aria-current="page" href="/">Home</a>
+          <a class="link-sign-up" href="/signUp">Sign-Up</a>
+          <a class="link-test" href="/test">test</a>
       <!--         <a class="nav-link disabled">Disabled</a> -->
     </div>
   </div>

@@ -1,3 +1,18 @@
 body{
-    background-color: blue;
+    background-color: rgb(122, 210, 230);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: greenyellow;
+}
+nav{
+    background-color: antiquewhite;
+    height: 50px;
+
+}
+a:active,a:visited{
+    background: black;
+    font-weight: 900;
+}
+.link-home,.link-sign-up,.link-test{
+    padding: 10px;
+    text-align: justify;
 }

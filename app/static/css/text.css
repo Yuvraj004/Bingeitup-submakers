@@ -1,0 +1,29 @@
+
+.fluid{
+    background-color: rgb(93, 179, 185);
+    border-radius: 3px;
+    width: 20%;
+
+}
+.contform{
+    background-color: bisque;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    float: right;
+
+}
+.form-group,.btn-primary{
+    padding: 10px;
+}
+.brief{
+    background-color: bisque;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    float: left;
+}
+.lineone{
+    display:flex;
+    justify-content:space-between;
+}

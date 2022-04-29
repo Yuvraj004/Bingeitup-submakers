@@ -1,5 +1,5 @@
 {%extends "public/publicTemplate/basePublicTemplate.html"%}
-<link  rel= "stylesheet" type= "text/css" href="css/text.css">
+
 {%block title%}
 
 This is Test.
@@ -7,36 +7,42 @@ This is Test.
 {%endblock%}
 
 {%block main%}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/text.css') }}">
 <nav class="navbar">
     <div class="fluid">
         <div class="nav">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-          <a class="nav-link" href="/signUp">Sign-Up</a>
-          <a class="nav-link" href="/test">test</a>
+          <a class="link-home" aria-current="page" href="/">Home</a>
+          <a class="link-sign-up" href="/signUp">Sign-Up</a>
+          <a class="link-test" href="/test">test</a>
 <!--         <a class="nav-link disabled">Disabled</a> -->
         </div>
     </div>
 </nav>
+&nbsp;
+&nbsp;
+<div class="lineone">
+    <div class="brief">
+        <h1>Welcome to test.</h1>
+        
+        <h2>Files are accepted only in .wav format</h2>
+        <h2><a href="https://cloudconvert.com/mp4-to-wav" target="_blank" alt="Sorry not available for current moment">Click here for conversion</a></h2>
 
-    <h1>Welcome to test.</h1>
-    
-    <h2>Files are accepted only in .wav format</h2>
-    <h2><a href="https://cloudconvert.com/mp4-to-wav" target="_blank" alt="Sorry not available for current moment">Click here for conversion</a></h2>
-
-    Enter the data in the form below.
-
-<form action="/test" method="POST" enctype="multipart/form-data">
-    <div class="form-group">
-        <label>email</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Enter the email.">
+        Enter the data in the form below.
     </div>
-    
-    <div class="form-group">
-        <label>File</label>
-        <input type="file" accept ="video/*"  class="form-control" id="file" name="file" placeholder="Enter a file.">
+    <div class="contform">
+        <form action="/test" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter the email.">
+            </div>
+            
+            <div class="form-group">
+                <label>File</label>
+                <input type="file" accept ="video/*"  class="form-control" id="file" name="file" placeholder="Enter a file.">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button> 
+
+        </form>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button> 
-
-</form>
-
+</div>
 {%endblock %}
