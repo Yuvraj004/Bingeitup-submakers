@@ -1,0 +1,6 @@
+[console_scripts]
+armorvise = process.__main__:main
+
+[gui_scripts]
+armorvise = process.__main__:main
+

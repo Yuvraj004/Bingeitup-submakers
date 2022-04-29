@@ -1,0 +1,32 @@
+{%extends "public/publicTemplates/basePublicTemplate.html"%}
+
+{%block title%}
+
+This is Test.
+
+{%endblock%}
+
+{%block main%}
+
+    <h1>Welcome to test.</h1>
+    
+    <h2>Files are accepted only in .wav format</h2>
+    <h2><a href="https://cloudconvert.com/mp4-to-wav" target="_blank" alt="Sorry not available for current moment">Click here for conversion</a></h2>
+
+    Enter the data in the form below.
+
+<form action="/test" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter the email.">
+    </div>
+    
+    <div class="form-group">
+        <label>File</label>
+        <input type="file" accept ="video/*"  class="form-control" id="file" name="file" placeholder="Enter a file.">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button> 
+
+</form>
+
+{%endblock %}
