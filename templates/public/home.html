@@ -1,0 +1,22 @@
+{%extends "public/publicTemplates/basePublicTemplate.html"%}
+
+
+
+<title> {%block title%} This is Home.{%endblock%}</title>
+<link rel="stylesheet" href="static//css//navStyle.css" />
+
+
+{%block main%}
+<nav class="navbar">
+    <div class="fluid">
+        <div class="nav">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/signUp">Sign-Up</a>
+          <a class="nav-link" href="/test">test</a>
+<!--         <a class="nav-link disabled">Disabled</a> -->
+        </div>
+    </div>
+</nav>
+    <h1>Welcome to Home.</h1>
+
+{%endblock %}

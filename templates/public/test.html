@@ -1,5 +1,5 @@
 {%extends "public/publicTemplates/basePublicTemplate.html"%}
-
+<link  rel= "stylesheet" type= "text/css" href="{{ url_for('static',filename='css/text.css') }}">
 {%block title%}
 
 This is Test.
@@ -7,6 +7,16 @@ This is Test.
 {%endblock%}
 
 {%block main%}
+<nav class="navbar">
+    <div class="fluid">
+        <div class="nav">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link" href="/signUp">Sign-Up</a>
+          <a class="nav-link" href="/test">test</a>
+<!--         <a class="nav-link disabled">Disabled</a> -->
+        </div>
+    </div>
+</nav>
 
     <h1>Welcome to test.</h1>
     
