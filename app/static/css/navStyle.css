@@ -1,12 +1,13 @@
 body{
-    background-color: rgb(122, 210, 230);
+    background-color: whitesmoke;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: greenyellow;
+    
 }
 nav{
-    background-color: antiquewhite;
-    height: 50px;
-
+    background-color: grey;
+    height: 70px;
+    padding: 10px;
+    margin: 10px;
 }
 a:active,a:visited{
     background: black;
@@ -14,5 +15,4 @@ a:active,a:visited{
 }
 .link-home,.link-sign-up,.link-test{
     padding: 10px;
-    text-align: justify;
 }
