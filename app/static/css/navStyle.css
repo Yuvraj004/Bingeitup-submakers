@@ -4,16 +4,13 @@ body{
     
 }
 .navbar{
+    background: linear-gradient(100deg,#B94629,#ea7153);
     display:flex;
     justify-content: space-between;
 }
 .des{
     display: flex;flex-direction: row;
     padding: auto;
-}
-.name{
-
-    margin-bottom: 10px;
 }
 nav{
     background-color: #db6447;
@@ -29,6 +26,7 @@ nav{
 a:active,a:visited,a{
     color: azure;
     font-weight: 900;
+    text-decoration:none;
 }
 .link-home,.link-sign-up,.link-test{
     padding: 20px;
