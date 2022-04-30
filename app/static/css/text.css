@@ -1,29 +1,42 @@
 
-.fluid{
-    border-radius: 3px;
-    width: 20%;
 
-}
-.contform{
-    background-color: rgb(196, 249, 255);
-    text-align: center;
-    padding: 10px;
-    margin: 5px;
-    float: right;
-
-}
 .form-group,.btn-primary{
     padding: 10px;
+    text-align: left;
+    font-weight:900  ;
 }
-.brief{
+.btn-primary{
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 4px 4px black;
+    width: 50%;margin: auto;
+    transition: all linear 80ms;
+    cursor: pointer;
+}
+.btn-primary:hover{
+    opacity: 0.6;
+    transition: 0.1ms;
+}
+.btn-primary:active {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
 
+
+.brief,.contform{
+    background-color:#eaab78;
     text-align: center;
     padding: 10px;
     margin: 5px;
-    float: left;
+    border-radius: 4px ;
+    box-shadow: 7px 7px black;
+    color: antiquewhite;
 }
 .lineone{
     display:flex;
     justify-content: space-around;
-    background-color: linear-gradient(110deg,lightblue,rgb(196, 249, 255));
+}
+form{
+    display: flex;
+    flex-direction: column;
 }

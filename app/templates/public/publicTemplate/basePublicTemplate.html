@@ -12,8 +12,24 @@
   </head>
 
   <body>
+
+    <nav class="navbar">
+      <div class="des">
+        <i class="fa-solid fa-cloud-word"></i>
+        <span class="name"><h2>SubMakers</h2></span>
+        
+      </div>
+      <div class="nav">
+        <a class="link-home" aria-current="page" href="/"><i class="fa-duotone fa-house" placeholder="error"></i>Home</a>
+        <a class="link-sign-up" href="/signUp">Sign-Up</a>
+        <a class="link-test" href="/test">test</a>
+      </div>
+    </nav>
     <main>
-      {% block main %} {% endblock main %}
+      {% block main %} 
+      <script src="https://kit.fontawesome.com/2dfc32c7e6.js" ></script>
+      {% endblock main %}
     </main>
+    <script src="https://kit.fontawesome.com/2dfc32c7e6.js" ></script>
   </body>
 </html>
