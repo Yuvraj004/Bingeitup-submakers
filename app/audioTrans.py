@@ -11,7 +11,7 @@ def audioSplitter(newFileName):
     tempVar = 1  # holds file name which is a number.
     for i in range(0, round(len(sound)/1000), 120):
         if((len(sound)-i*1000) <= 120000):
-            # only here  when time remaining to process is less than 2 mins.
+            # here only when time remaining to process is less than 2 mins.
             break
         sound[i*1000:(i+120)*1000].export(os.path.join(os.getcwd(),
                                                        "app", "chunks", f"{tempVar}.wav"), format="wav")
@@ -61,6 +61,8 @@ def textExtractor(fileName):
                     # rec.adjust_for_ambient_noise(source, duration=1)
                     audio = rec.record(source)
                     text = rec.recognize_google(audio)
-                    textValue+=text;
-                
-    return textValue;
+                    print(os.path.join(os.getcwd(), "app", "chunks", name)+"\n");
+                    print(text)
+                    textValue += text
+
+    return textValue
