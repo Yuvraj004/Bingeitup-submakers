@@ -41,14 +41,13 @@ def toWav(fileName):  # has  extension mp4;
 
     audioSplitter(newFileName)  # calls to cut the audio files.
 
-    # return
-    # returns name with wav extension
+    return newFileName;                 # returns name with wav extension
 
 
 # takes mp4 file name and converts it to wav internally.
 def textExtractor(fileName):
-    # wavFileName = toWav(fileName)  # has extension wav.
-    # toWav(fileName)
+    wavFileName = toWav(fileName)  # has extension wav.
+    # toWav(fileName) #possibly deleted ;
     chunksPath = os.path.join(os.getcwd(), "app", "auds")
     textValue = ""
     rec = sr.Recognizer()
@@ -61,8 +60,8 @@ def textExtractor(fileName):
                     # rec.adjust_for_ambient_noise(source, duration=1)
                     audio = rec.record(source)
                     text = rec.recognize_google(audio)
-                    print(os.path.join(os.getcwd(), "app", "chunks", name)+"\n");
-                    print(text)
+                    # print(os.path.join(os.getcwd(), "app", "chunks", name)+"\n");
+                    # print(text)
                     textValue += text
 
     return textValue
