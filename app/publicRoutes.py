@@ -1,7 +1,7 @@
 import os
 from app import app
 from werkzeug.utils import secure_filename
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func  # what is this even doing?
 from app.audioTrans import textExtractor
