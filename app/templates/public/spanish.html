@@ -1,0 +1,36 @@
+{%extends "public/publicTemplate/basePublicTemplate.html"%}
+
+{%block title%}
+
+This is Spanish page.
+
+{%endblock%}
+
+{%block main%}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/text.css') }}">
+&nbsp;
+&nbsp;
+<div class="lineone">
+    <div class="contform">
+        <form action="/spanish" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter the email.">
+            </div>
+            <div class="form-group">
+                <label>File</label>
+                <input type="file" accept ="video/*"  class="form-control" id="file" name="file" >
+            </div>
+            <button type="submit" class="btn-primary">SUBMIT</button> 
+
+        </form>
+    </div>
+    <div>
+        <p>
+            {{subs}}
+        </p>
+    </div>
+    <script src="{{ url_for('static', filename='/js/fontawesome.js') }}" ></script>
+    <script src="https://kit.fontawesome.com/2dfc32c7e6.js" ></script>
+</div>
+{%endblock %}

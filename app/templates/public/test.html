@@ -13,18 +13,21 @@ This is Test.
 <div class="lineone">
     <div class="contform">
         <form action="/test" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Enter the email.">
-            </div>
-            <div class="form-group">
-                <label>File</label>
-                <input type="file" accept ="video/*"  class="form-control" id="file" name="file" >
+            <div class="row">
+                <label for="language">
+                <i class="fa fa-language fa-2x" aria-hidden="true"></i>&nbsp;Choose the language </i></label>
+                <br>
+                <select name="dropdown">
+                    <option value="Hindi">Hindi</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Madn">Mandarin</option>
+                    <option value="Fr">French</option>
+                </select>
             </div>
             <button type="submit" class="btn-primary">SUBMIT</button> 
-
         </form>
     </div>
+    <script src="{{ url_for('static', filename='/js/fontawesome.js') }}" ></script>
     <script src="https://kit.fontawesome.com/2dfc32c7e6.js" ></script>
 </div>
 {%endblock %}

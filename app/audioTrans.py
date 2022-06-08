@@ -48,7 +48,7 @@ def toWav(fileName):  # has  extension mp4;
 # takes mp4 file name and converts it to wav internally.
 def textExtractor(fileName):
     # wavFileName = toWav(fileName)  # has extension wav.
-    toWav(fileName)
+    # toWav(fileName)
     chunksPath = os.path.join(os.getcwd(), "app", "auds")
     textValue = ""
     rec = sr.Recognizer()
