@@ -1,13 +1,13 @@
 import speech_recognition as sr
 import os
+from pydub import AudioSegment as AS
 from moviepy.editor import VideoFileClip
-from pydub import AudioSegment
 
 
 def audioSplitter(newFileName):
     audioFileDir = os.path.join(os.getcwd(), "app", "auds", newFileName)
     # print(audioFileDir);
-    sound = AudioSegment.from_file(audioFileDir)
+    sound = AS.from_file(audioFileDir)
     tempVar = 1  # holds file name which is a number.
     for i in range(0, round(len(sound)/1000), 120):
         if((len(sound)-i*1000) <= 120000):

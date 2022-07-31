@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 from flask import render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from app.audioTrans import textExtractor
-from deep_translator import GoogleTranslator
+import speech_recognition as sr
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + \
     os.path.join("database", 'database.db')
@@ -59,7 +59,7 @@ def find():
         # here filename has extension mp4 or whatever but not wav.
         subs = textExtractor(filename)
         # print(subs)
-        espLang=GoogleTranslator(source="auto",target="es").translate(subs);
+        espLang=sr.GoogleTranslator(source="auto",target="es").translate(subs);
         return render_template("public/spanish.html",subs=espLang)
 
     return render_template("public/spanish.html")
