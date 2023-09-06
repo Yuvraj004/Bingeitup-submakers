@@ -27,9 +27,9 @@ db.create_all()
 
 
 @app.route("/")
-@app.route("/home")
-def home():
-    return render_template("public/home.html")
+@app.route("/index")
+def index():
+    return render_template("public/index.html")
 
 @app.route("/test", methods=["GET", "POST"])
 def langspecify():
