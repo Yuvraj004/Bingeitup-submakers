@@ -62,6 +62,6 @@ def textExtractor(fileName):
                     text = rec.recognize_google(audio)
                     # print(os.path.join(os.getcwd(), "app", "chunks", name)+"\n");
                     # print(text)
-                    textValue += text
+                    textValue += text # type: ignore
 
     return textValue
