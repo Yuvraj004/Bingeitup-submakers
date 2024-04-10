@@ -8,22 +8,25 @@ This is Hindi page.
 
 {%block main%}
 <link rel="stylesheet" href="{{ url_for('static', filename='/css/text.css') }}">
-&nbsp;
-&nbsp;
+
 <div class="lineone" >
     <div class="contform">
-        <form action="/hindi" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="email">Email</label>
+        <form class="formBox" action="/hindi" method="POST" enctype="multipart/form-data">
+            <div  class="detailBox">
+                <label class="fl fontLabel" for="email">Email</label>
                 <div class="fl iconBox"><i class="fa fa-envelope" aria-hidden="true"></i></div>
-                <input type="email" class="form-control inputField" id="email" name="email" placeholder="Enter the email.">
+                <div class="fr">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter the email.">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="file">File</label>
+            <div class="detailBox">
+                <label class="fl fontLabel" for="file">File</label>
                 <div class="fl iconBox"><i class="fa fa-file" aria-hidden="true"></i></div>
-                <input type="file" size="10" accept="video/*" class="form-control" id="file" name="file" style="display: none;">  
-                    <button type="button" class="custom-file-button">Choose File</button> 
-                </input> 
+                <div class="fr">
+                    <input type="file" accept="video/*" class="form-control" id="file" name="file" style="display: none;">  
+                        <button type="button" class="custom-file-button">Choose File</button> 
+                    </input> 
+                </div>
             </div>
             
             <button type="submit" class="btn-primary">SUBMIT</button> 
