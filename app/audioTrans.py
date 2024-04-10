@@ -5,8 +5,8 @@ from pydub import AudioSegment
 
 
 def audioSplitter(newFileName):
-    audioFileDir = os.path.join(os.getcwd(), "app", "auds", newFileName)
-    # print(audioFileDir);
+    audioFileDir = os.path.join(os.getcwd(), "app", "vids", newFileName)
+    print(audioFileDir);
     sound = AudioSegment.from_file(audioFileDir)
     tempVar = 1  # holds file name which is a number.
     for i in range(0, round(len(sound)/1000), 120):
@@ -46,16 +46,17 @@ def toWav(fileName):  # has  extension mp4;
 
 # takes mp4 file name and converts it to wav internally.
 def textExtractor(fileName):
-    wavFileName = toWav(fileName)  # has extension wav.
+    # wavFileName = toWav(fileName)  # has extension wav.
     # toWav(fileName) #possibly deleted ;
-    chunksPath = os.path.join(os.getcwd(), "app", "auds")
+    audioSplitter(fileName) 
+    chunksPath = os.path.join(os.getcwd(), "app", "vids")
     textValue = ""
     rec = sr.Recognizer()
-
+    print("workingreached",end=" ")
     for root, dir, files in os.walk(os.path.join(os.getcwd(), "app", "chunks")):
         for name in files:
             if ".wav" in name:
-
+                print("working",end=" ")
                 with sr.AudioFile(os.path.join(os.getcwd(), "app", "chunks", name)) as source:
                     # rec.adjust_for_ambient_noise(source, duration=1)
                     audio = rec.record(source)
@@ -63,5 +64,6 @@ def textExtractor(fileName):
                     # print(os.path.join(os.getcwd(), "app", "chunks", name)+"\n");
                     # print(text)
                     textValue += text # type: ignore
+                    print("workingtext",end=" ")
 
     return textValue

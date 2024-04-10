@@ -13,15 +13,15 @@ This is Test.
 <div class="lineone">
     <div class="contform">
         <form action="/test" method="POST" enctype="multipart/form-data">
-            <div class="row">
+            <div class="row LangSelect">
                 <label for="language">
-                <i class="fa fa-language fa-2x" aria-hidden="true"></i>&nbsp;Choose the language </i></label>
+                <i class="fa fa-language fa-2x" aria-hidden="true" id = "language" style="font-size: 30px !important;"></i>&nbsp;Choose the language </i></label>
                 <br>
-                <select name="dropdown">
+                <select name="dropdown" class="dropdownField">
                     <option value="Hindi">Hindi</option>
                     <option value="Spanish">Spanish</option>
-                    <option value="Madn">Mandarin</option>
-                    <option value="Fr">French</option>
+                    <option value="English">English</option>
+                    <option value="French">French</option>
                 </select>
             </div>
             <button type="submit" class="btn-primary">SUBMIT</button> 

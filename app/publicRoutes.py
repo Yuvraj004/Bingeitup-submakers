@@ -44,6 +44,12 @@ def langspecify():
         print(str(lang))
         if str(lang) == "Spanish":
             return redirect(url_for("spanish"))
+        elif str(lang) == "Hindi":
+            return redirect(url_for("hindi"))
+        elif str(lang) == "French":
+            return redirect(url_for("french"))
+        elif str(lang) == "English":
+            return redirect(url_for("english"))
         return redirect(request.url)
 
     return render_template("public/test.html")
@@ -99,3 +105,58 @@ def findHindi():
 @app.route('/hindi')
 def hindi():
     return render_template("public/hindi.html")
+
+#FOR FRENCH
+
+@app.route("/french", methods=["GET", "POST"])
+def findFrench():
+    if request.method == "POST":
+        em = request.form.get("email")
+        file = request.files['file']
+        print(file)
+        filename = secure_filename(file.filename) # type: ignore
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        det = Details(email=em, vidName=os.path.join(
+            app.config['UPLOAD_FOLDER'], filename))
+        session.add(det)
+        session.commit()
+        print("Added successfully")
+
+        # here filename has extension mp4 or whatever but not wav.
+        subs = textExtractor(filename)
+        print(subs)
+        hiLang = GoogleTranslator(source="auto", target="fr").translate(subs)
+        return render_template("public/french.html", subs=hiLang)
+
+    return render_template("public/french.html")
+
+@app.route('/french')
+def french():
+    return render_template("public/french.html")
+
+#FOR ENGLISH
+@app.route("/english", methods=["GET", "POST"])
+def findEnglish():
+    if request.method == "POST":
+        em = request.form.get("email")
+        file = request.files['file']
+        print(file)
+        filename = secure_filename(file.filename) # type: ignore
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        det = Details(email=em, vidName=os.path.join(
+            app.config['UPLOAD_FOLDER'], filename))
+        session.add(det)
+        session.commit()
+        print("Added successfully")
+
+        # here filename has extension mp4 or whatever but not wav.
+        subs = textExtractor(filename)
+        print(subs)
+        hiLang = GoogleTranslator(source="auto", target="en").translate(subs)
+        return render_template("public/english.html", subs=hiLang)
+
+    return render_template("public/english.html")
+
+@app.route('/english')
+def english():
+    return render_template("public/english.html")

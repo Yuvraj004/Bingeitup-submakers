@@ -1,10 +1,5 @@
 
 
-.form-group,.btn-primary{
-    padding: 10px;
-    text-align: left;
-    font-weight:900  ;
-}
 .btn-primary{
     text-align: center;
     border-radius: 5px;
@@ -23,7 +18,12 @@
   }
 
 
-.brief,.contform{
+.brief,.contform {
+    display: flex !important;
+    width: 50%;
+    height: auto;
+    flex-direction: column;
+    justify-content: space-between;
     background:linear-gradient(120deg,#f6cfaf,#eca164);
     text-align: center;
     padding: 10px;
@@ -32,11 +32,64 @@
     box-shadow: 7px 7px black;
     color: antiquewhite;
 }
+.LangSelect{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+}
 .lineone{
     display:flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-around;
 }
 form{
     display: flex;
     flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.form-group,.btn-primary{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 900;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+.inputField{
+   
+    width: 50%;
+}
+.dropdownField{
+    font-size: 18px;
+}
+.fl{
+    float: left;
+    width: 110px;
+    line-height: 35px;
+}
+.iconBox{
+	height: 35px;
+	width: 40px;
+	line-height: 38px;
+	text-align: center;
+  background: #474645;
+}
+.custom-file-button {
+    /* Style the button as desired (color, background, hover effects, etc.) */
+    width: 50%;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
 }

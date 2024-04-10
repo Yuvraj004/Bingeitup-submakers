@@ -4,7 +4,7 @@
  * Copyright 2022 Fonticons, Inc.
  */
 (function () {
-  'use strict';
+  'use strict';//Strict mode helps catch some common coding errors and unsafe actions
 
   function ownKeys(object, enumerableOnly) {
     var keys = Object.keys(object);
