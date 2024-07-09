@@ -132,6 +132,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+up_pkg.sh
 
 # Spyder project settings
 .spyderproject
