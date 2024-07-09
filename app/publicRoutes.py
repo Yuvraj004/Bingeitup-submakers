@@ -59,7 +59,7 @@ def find():
     if request.method == "POST":
         em = request.form.get("email")
         file = request.files['file']
-        print(file)
+        # print(file)
         filename = secure_filename(file.filename) # type: ignore
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         det = Details(email=em, vidName=os.path.join(
@@ -160,3 +160,4 @@ def findEnglish():
 @app.route('/english')
 def english():
     return render_template("public/english.html")
+
