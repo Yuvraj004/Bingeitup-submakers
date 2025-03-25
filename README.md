@@ -18,8 +18,7 @@ Subtitle Makers is a project that allows you to extract subtitles from video fil
 - Pydub
 - SpeechRecognition
 - Deep Translator
-- SQLAlchemy
-- SQLite
+- MongoDB
 
 ## Installation
 
@@ -36,11 +35,12 @@ Subtitle Makers is a project that allows you to extract subtitles from video fil
     pip install -r requirements.txt
     ```
 
-3. Set up the SQLite database:
+3. Set up the MongoDB database:
     ```bash
-    python
-    from your_script_name import Base, engine
-    Base.metadata.create_all(engine)
+    from pymongo.mongo_client import MongoClient
+    from pymongo.server_api import ServerApi
+    data_uri = os.environ.get(MONGO_URI)
+    client = MongoClient(database_url, server_api=ServerApi('1'))
     ```
 
 ## Usage
@@ -48,6 +48,8 @@ Subtitle Makers is a project that allows you to extract subtitles from video fil
 1. Start the Flask server:
     ```bash
     flask run
+    or 
+    python main.py
     ```
 
 2. Open your browser and navigate to `http://localhost:5000/`.
@@ -78,4 +80,4 @@ subtitle-makers/
 │   │   ├── database.db
 ├── requirements.txt
 ├── README.md
-├── run.py
+├── main.py

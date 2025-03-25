@@ -6,15 +6,16 @@ from pydub import AudioSegment
 
 def audioSplitter(newFileName):
     audioFileDir = os.path.join(os.getcwd(), "app", "vids", newFileName)
-    print(audioFileDir);
+    
+    print("File in audioSplitter: ")
+    
     sound = AudioSegment.from_file(audioFileDir)
     tempVar = 1  # holds file name which is a number.
     for i in range(0, round(len(sound)/1000), 120):
         if((len(sound)-i*1000) <= 120000):
             # here only when time remaining to process is less than 2 mins.
             break
-        sound[i*1000:(i+120)*1000].export(os.path.join(os.getcwd(),
-                                                       "app", "chunks", f"{tempVar}.wav"), format="wav")
+        sound[i*1000:(i+120)*1000].export(os.path.join(os.getcwd(),"app", "chunks", f"{tempVar}.wav"), format="wav")
         # print(f"{i*1000}:{(i+120)*1000}_______{tempVar}.wav");
         tempVar += 1
     sound[(tempVar-1)*120000:len(sound)
@@ -52,11 +53,11 @@ def textExtractor(fileName):
     chunksPath = os.path.join(os.getcwd(), "app", "vids")
     textValue = ""
     rec = sr.Recognizer()
-    print("workingreached",end=" ")
+    
     for root, dir, files in os.walk(os.path.join(os.getcwd(), "app", "chunks")):
         for name in files:
             if ".wav" in name:
-                print("working",end=" ")
+                
                 with sr.AudioFile(os.path.join(os.getcwd(), "app", "chunks", name)) as source:
                     # rec.adjust_for_ambient_noise(source, duration=1)
                     audio = rec.record(source)
@@ -64,6 +65,6 @@ def textExtractor(fileName):
                     # print(os.path.join(os.getcwd(), "app", "chunks", name)+"\n");
                     # print(text)
                     textValue += text # type: ignore
-                    print("workingtext",end=" ")
+                    
 
     return textValue
